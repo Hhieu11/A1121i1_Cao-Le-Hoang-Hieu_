@@ -1,6 +1,8 @@
 package ss3_MangVaPhuongThuc.BaiTap;
+
+import java.util.Arrays;
 import java.util.Scanner;
-import java.util.ArrayList;
+
 
 public class XoaPhanTu {
     public static void main(String[] args) {
@@ -26,6 +28,28 @@ public class XoaPhanTu {
         for(int j=0;j<arr.length;j++){
             System.out.print(arr[j]+" ");
         }
+        boolean check=false;
+        System.out.println("Nhap vao phan tu muon xoa");
+        int element=sc.nextInt();
+        for(int j=0;j<arr.length;j++){
+            if(arr[j]==element){
+                for(int z=0;z<arr.length-j-1;z++){
+                    arr[j+z]=arr[j+1+z];
+                }
+                arr[arr.length-1]=0;
+                check=true;
+            }
+        }
+        if(check){
+            System.out.println("Mang moi :"+ arr);
+        }
+        else {
+            System.out.println("Khong tim thay");
+        }
+
+
+
+
 
     }
 }
