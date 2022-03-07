@@ -4,7 +4,7 @@ public class Shape {
     private String color="Green";
     private boolean filler=true;
 
-    Shape(){}
+     public Shape(){}
     public Shape(String color, boolean filler){
         this.color=color;
         this.filler=filler;

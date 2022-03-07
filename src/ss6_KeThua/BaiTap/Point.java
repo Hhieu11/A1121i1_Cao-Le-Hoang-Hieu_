@@ -1,13 +1,12 @@
 package ss6_KeThua.BaiTap;
 
-public class Point2D {
+public class Point {
     private float x=0.0f;
-    private float y=0.0f;
-    private float arr [];
+    private  float y=0.0f;
+    public Point(){
 
-    public Point2D(){}
-
-    public Point2D(float x,float y){
+    }
+    public Point(float x, float y){
         this.x=x;
         this.y=y;
     }
@@ -27,17 +26,17 @@ public class Point2D {
     public void setY(float y) {
         this.y = y;
     }
-    public void setXY(float x,float y){
+    public void setXY(float x, float y){
+
         this.x=x;
         this.y=y;
+
     }
-    public float[] getXY() {
-        float[] arr = {x,y};
-        return arr;
+    public  float[] getXY(){
+        float[] arr={x,y};
+        return  arr;
     }
     public String toString(){
         return "(" +x + ", " + y + ")";
     }
-
-
 }
