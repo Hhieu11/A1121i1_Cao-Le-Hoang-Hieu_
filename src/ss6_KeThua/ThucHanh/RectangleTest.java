@@ -9,6 +9,6 @@ public class RectangleTest {
         System.out.println(rectangle);
 
         rectangle=new Rectangle(4,5,"red",true);
-        System.out.println(rectangle);
+        System.out.println(rectangle.toString());
     }
 }
