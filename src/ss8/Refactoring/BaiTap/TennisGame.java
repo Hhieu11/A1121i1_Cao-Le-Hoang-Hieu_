@@ -1,13 +1,16 @@
 package ss8.Refactoring.BaiTap;
 
 public class TennisGame {
+    public static final String LOVE_ALL = "Love-All";
+
     public static String getScore(String player1Name, String player2Name, int scorePlayer1, int scorePlayer2) {
         String score = "";
         int tempScore = 0;
         if (scorePlayer1 == scorePlayer2) {
             switch (scorePlayer1) {
                 case 0:
-                    score = "Love-All";
+
+                    score = LOVE_ALL;
                     break;
                 case 1:
                     score = "Fifteen-All";
