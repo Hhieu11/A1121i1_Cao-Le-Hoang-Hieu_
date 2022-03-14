@@ -4,20 +4,22 @@ public class MyLinkedList {
     private Node head;
     private int numNodes;
 
+
+
     public MyLinkedList(Object data) {
         head = new Node(data);
     }
 
     public void add(int index, Object data) {
         Node temp = head;
-        Node holder;
+        Node a;
 
         for (int i = 0; i < index - 1 && temp.next != null; i++) {
             temp = temp.next;
         }
-        holder = temp.next;
+        a = temp.next;
         temp.next = new Node(data);
-        temp.next.next = holder;
+        temp.next.next = a;
         numNodes++;
     }
 
