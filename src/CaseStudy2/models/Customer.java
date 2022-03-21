@@ -23,4 +23,10 @@ public class Customer extends Person {
     public void setType(String type) {
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return  super.toString()+
+                "type=" + type + '\'' ;
+    }
 }

@@ -1,16 +1,36 @@
 package CaseStudy2.controllers;
 
+import CaseStudy2.Service.Impl.CustomerServiceImpl;
+import CaseStudy2.Service.Impl.EmployeeServiceImpl;
+
 import java.util.Scanner;
 
 public class FuramaController {
     public static void main(String[] args) {
         displayMainMenu();
+        Scanner scanner = new Scanner(System.in);
+//        returnMenu(scanner);
     }
+//    public static void returnMenu(Scanner scanner){
+//        int choice=-1;
+//
+//        System.out.println("1.Employee Management");
+//        System.out.println("2.Customer Management");
+//        System.out.println("3.Facility Management ");
+//        System.out.println("4.Booking Managerment");
+//        System.out.println("5.Promotion Management");
+//        System.out.println("6.Exit");
+//        while (choice!=6){
+//            choice=scanner.nextInt();
+//            displayMainMenu(choice);
+//        }
+//
+//    }
 
     public static void displayMainMenu() {
         boolean check = true;
 
-        while (check) {
+         while (check) {
             System.out.println("1.Employee Management");
             System.out.println("2.Customer Management");
             System.out.println("3.Facility Management ");
@@ -44,10 +64,11 @@ public class FuramaController {
                 }
 
             }
-        }
+      }
     }
 
     public static void displayEmployeeMenu() {
+        EmployeeServiceImpl employeeService= new EmployeeServiceImpl();
         boolean check = true;
         while (check) {
             System.out.println("1.Display list employees");
@@ -60,7 +81,16 @@ public class FuramaController {
 
             switch (scanner.nextInt()) {
                 case 1: {
+                    employeeService.display();
+                    break;
 
+                }
+                case 2:{
+                    employeeService.addNew();
+                    break;
+                }
+                case 4:{
+//                    returnMenu(scanner);
                 }
             }
         }
@@ -69,6 +99,8 @@ public class FuramaController {
     }
 
     public static void displayCustomerMenu() {
+        CustomerServiceImpl customerService= new CustomerServiceImpl();
+
         boolean check = true;
         while (check) {
             System.out.println("1.Display list Customer");
@@ -81,7 +113,16 @@ public class FuramaController {
 
             switch (scanner.nextInt()) {
                 case 1: {
+                    customerService.display();
+                    break;
 
+                }
+                case 2:{
+                    customerService.addNew();
+                    break;
+                }
+                case 4:{
+//                    returnMenu(scanner);
                 }
             }
         }
@@ -103,6 +144,9 @@ public class FuramaController {
             switch (scanner.nextInt()) {
                 case 1: {
 
+                }
+                case 4:{
+//                    returnMenu(scanner);
                 }
             }
         }
@@ -127,6 +171,9 @@ public class FuramaController {
                 case 1: {
 
                 }
+                case 6:{
+//                    returnMenu(scanner);
+                }
             }
         }
 
@@ -147,6 +194,12 @@ public class FuramaController {
                 case 1: {
 
                 }
+                case 3:{
+//                    returnMenu(scanner);
+                }
+
+
+
             }
         }
 
