@@ -52,11 +52,41 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void edit() {
+        System.out.println("Input id");
+        int inputId=scanner.nextInt();
+        for(int i=0;i<=customerList.size();i++){
+            if(customerList.get(i).getId()==inputId){
+                Scanner scanner=new Scanner(System.in);
+                System.out.println("Nhập id");
+                int id=Integer.parseInt(scanner.nextLine());
+                System.out.println("Nhập tên");
+                String name=scanner.nextLine();
+                System.out.println("nhập tuổi");
+                int age=Integer.parseInt(scanner.nextLine());
+                System.out.println("Nhập địa chỉ");
+                String address=scanner.nextLine();
+                System.out.println("Nhập CMND");
+                int idCard=Integer.parseInt(scanner.nextLine());
+                System.out.println("Nhập Email");
+                String email=scanner.nextLine();
+                System.out.println("Loại khách hàng");
+                String type=scanner.nextLine();
+
+                customerList.set(inputId,new Customer(id,name, age, address, idCard,
+                        email,type));
+
+
+            }
+        }
+
 
     }
 
+
+
     @Override
     public void delete() {
+
 
     }
 }

@@ -68,6 +68,8 @@ public class FuramaController {
     }
 
     public static void displayEmployeeMenu() {
+
+
         EmployeeServiceImpl employeeService= new EmployeeServiceImpl();
         boolean check = true;
         while (check) {
@@ -89,6 +91,12 @@ public class FuramaController {
                     employeeService.addNew();
                     break;
                 }
+                case 3:{
+                    employeeService.edit();
+                    break;
+                }
+
+
                 case 4:{
 //                    returnMenu(scanner);
                 }
@@ -119,6 +127,10 @@ public class FuramaController {
                 }
                 case 2:{
                     customerService.addNew();
+                    break;
+                }
+                case 3 :{
+                    customerService.edit();
                     break;
                 }
                 case 4:{
