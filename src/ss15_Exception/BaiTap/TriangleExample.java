@@ -8,25 +8,37 @@ public class TriangleExample {
     public static void main(String[] args) throws IllegalTriangleException {
         TriangleExample triangleExample= new TriangleExample();
         Scanner scanner= new Scanner(System.in);
-        System.out.println("Nhap vao x");
-        int x=scanner.nextInt();
-        System.out.println("Nhap vao y");
-        int y=scanner.nextInt();
+        try {
+            System.out.println("Nhap vao a");
+            int a = scanner.nextInt();
+            System.out.println("Nhap vao b");
+            int b = scanner.nextInt();
 
-        System.out.println("Nhap vao z");
-        int z=scanner.nextInt();
-        triangleExample.triangle(x,y,z);
+            System.out.println("Nhap vao c");
+            int c = scanner.nextInt();
+
+            try {
+                triangleExample.triangle(a,b,c);
+            }
+            catch (IllegalTriangleException e){
+                System.out.println(e.getMessage());
+            }
+
+
+        }catch (Exception e){
+            System.out.println("Nhap sai, Nhap 3 cạnh không được âm");
+        }
+        scanner.close();
+
 
 
 
     }
-    private static void triangle(int x,int y,int z) throws IllegalTriangleException {
-        try{
-            if(x<y+z&&y<x+z&&z<x+y){
-                System.out.println("Ba canh la tam giac");
-            }
-        }catch (Exception e){
-            System.out.println("loi"+e.getMessage());
+    private static void triangle(int a,int b,int c) throws IllegalTriangleException {
+        if (a + b <= c || a + c <= b || b + c <= a) {
+            throw new IllegalTriangleException("Loi: Tam giac khong hop le!");
+        } else {
+            System.out.println("Tam giac hop le!");
         }
 
 
