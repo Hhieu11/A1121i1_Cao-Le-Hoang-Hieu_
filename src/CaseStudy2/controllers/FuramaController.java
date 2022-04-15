@@ -52,6 +52,7 @@ public class FuramaController {
                 }
                 case 3: {
                     displayFacilityMenu();
+
                 }
                 case 4: {
                     displayBookingMenu();
